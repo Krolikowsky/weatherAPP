@@ -22,3 +22,99 @@
     &__icon
         width: 30px
         height: 30px
+
+.mainInformation
+    width: 80%
+    margin: 20% auto
+
+    &__time
+        text-align: center
+
+    &__city
+        font-size: 3rem
+        color: $white
+        font-weight: 300
+        text-align: center
+
+    &__weatherMainInformation
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-content: flex-start
+        align-items: flex-start
+
+    &__image
+        width: 80px
+
+    &__temperature
+        font-size: 11rem
+        color: $white
+        line-height: 11rem
+        font-weight: 200
+    
+    &__o
+        font-size: 4rem
+        color: $white
+
+    &__changeCF
+        display: flex
+        flex-direction: column
+        margin-left: 20px
+        margin-top: 10px
+
+    &__celsius
+        font-size: 2rem
+        color: $white
+
+    &__fahrenheit
+        font-size: 2rem
+        color: $white
+
+    &__weather
+        font-size: 2.5rem
+        color: $white
+        text-align: center
+        font-weight: 300
+
+.statistics
+    padding: $padding
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+    &__box
+        width: 45%
+        text-align: center
+        border-radius: $borderRadius
+        backdrop-filter: blur(10px)
+        -webkit-backdrop-filter: blur(10px)
+        margin-bottom: 20px
+        padding: 10px
+
+    &__image
+        width: 30px
+
+.todayStatistics
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
+    padding: 20px
+    margin: 0px 20px
+    border-radius: $borderRadius
+
+    &__top
+        display: flex
+        justify-content: space-between
+        align-content: center
+        align-items: center
+
+    &__bottomBox
+        display: flex
+        justify-content: space-between
+        margin-top: 20px
+
+    &__weatherBox
+        display: flex
+        flex-direction: column
+        align-content: center
+        align-items: center
+        justify-content: center
