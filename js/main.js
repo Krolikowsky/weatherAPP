@@ -17,9 +17,6 @@ searchButton.addEventListener("click", () => {
     updateDate()
 })
 
-iconGeolocation.addEventListener("click", () => {
-})
-
 const connectAPI = () => {
     const API_KEY = `d531ef0a02c5a713565a1b96de1fa8df`
     const API_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric`
@@ -46,6 +43,33 @@ const updateDate = () => {
     currentTimeParagraph.textContent = `Updated on  ${currentTime.getHours()}:${currentTime.getMinutes()}`
     currentDateParagraph.textContent = `${currentTime.getDate()}.${currentTime.getMonth()}.${currentTime.getFullYear()}`
 }
+
+iconGeolocation.addEventListener("click", () => {
+    let geoNavigator = navigator.geolocation
+
+    if(geoNavigator) {
+      geoNavigator.getCurrentPosition(function(location) {
+        let geoLatitude = location.coords.latitude
+        let geoLongitude = location.coords.longitude
+
+        const API_KEY = `d531ef0a02c5a713565a1b96de1fa8df`
+        const API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${geoLatitude}&lon=${geoLongitude}&appid=${API_KEY}&units=metric`
+  
+        fetch(API_URL)
+            .then(response => response.json())
+            .then((response) => {
+                let temperature = response.list[0].main.temp
+                let visibility = response.list[0].visibility
+                paragraphCityName.textContent = response.city.name
+                shortDescription.textContent = response.list[0].weather[0].main
+                pressureParagraph.textContent = response.list[0].main.pressure + " hPa"
+                windParagraph.textContent = response.list[0].wind.speed + " km/h"
+                humidityParagraph.textContent = response.list[0].main.humidity + " %"
+                visibilityParagraph.textContent = visibility / 100 + " %"
+                mainTemperature.textContent = temperature.toFixed(1)
+            })
+        })}
+})
 
 connectAPI()
 updateDate()
