@@ -11,7 +11,7 @@
     <div class="searchBar">
         <img class="searchBar__icon" src="/image/pin.png">
         <input type="text" class="searchBar__input">
-        <img class="searchBar__icon" src="/image/search.png">
+        <img class="searchBar__icon searchBar__searchIcon" src="/image/search.png">
     </div>
 
     <div class="mainInformation">
@@ -25,36 +25,36 @@
             </div>
         </div>
         <p class="mainInformation__weather">Deszcz</p>
-        <p class="mainInformation__time paragraph">Zaktualizowano o 21:07</p>
+        <p class="mainInformation__time paragraph">Updated on 21:07</p>
     </div>
 
     <div class="statistics">
         <div class="statistics__box">
             <img class="statistics__image"src="/image/pressure.png" alt="">
-            <p class="paragraph">Ciśnienie</p>
-            <p class="paragraphBold">20 hPa</p>
+            <p class="paragraph">Pressure</p>
+            <p class="paragraphBold pressureParagraph">20 hPa</p>
         </div>
         <div class="statistics__box">
             <img class="statistics__image"src="/image/wind.png" alt="">
-            <p class="paragraph">Wiatr</p>
-            <p class="paragraphBold">20 km/s</p>
+            <p class="paragraph">Wind</p>
+            <p class="paragraphBold windParagraph">20 km/s</p>
         </div>
         <div class="statistics__box">
             <img class="statistics__image"src="/image/humidity.png" alt="">
-            <p class="paragraph">Wilgotność</p>
-            <p class="paragraphBold">20 %</p>
+            <p class="paragraph">Humidity</p>
+            <p class="paragraphBold humidityParagraph">20 %</p>
         </div>
         <div class="statistics__box">
             <img class="statistics__image"src="/image/visibility.png" alt="">
-            <p class="paragraph">Widoczność</p>
-            <p class="paragraphBold">20 %</p>
+            <p class="paragraph">Visibility</p>
+            <p class="paragraphBold visibilityParagraph">20 %</p>
         </div>
     </div>
 
     <div class="todayStatistics">
         <div class="todayStatistics__top">
-            <h2 class="headingTwo">Dzisiaj</h2>
-            <p class="paragraph">07.02.2023</p>
+            <h2 class="headingTwo">Today</h2>
+            <p class="paragraph currentDate">07.02.2023</p>
         </div>
         <div class="todayStatistics__bottomBox">
             <div class="todayStatistics__weatherBox">
@@ -84,5 +84,6 @@
             </div>
         </div>
     </div>
+    <script src="/js/main.js"></script>
 </body>
 </html>
