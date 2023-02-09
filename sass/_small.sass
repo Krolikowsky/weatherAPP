@@ -109,8 +109,11 @@
 
     &__bottomBox
         display: flex
-        justify-content: space-between
+        justify-content: flex-start
         margin-top: 20px
+        backdrop-filter: blur(10px)
+        -webkit-backdrop-filter: blur(10px)
+        padding-bottom: 20px
 
     &__weatherBox
         display: flex
@@ -118,3 +121,45 @@
         align-content: center
         align-items: center
         justify-content: center
+        margin-right: 20px
+
+.dayStatistics
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
+    padding: 20px
+    margin: 20px
+    border-radius: $borderRadius
+
+    &__top
+        backdrop-filter: blur(10px)
+        -webkit-backdrop-filter: blur(10px)
+        display: flex
+        justify-content: space-between
+        align-content: center
+        align-items: center
+
+    &__bottom
+        display: flex
+        padding-top: 20px
+        justify-content: space-between
+        align-items: flex-end
+        align-content: flex-end
+
+    &__icon
+        width: 30px
+        height: 25px
+        margin-left: 10px
+
+    &__cityWeather
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-content: flex-end
+
+    &__temperature
+        font-size: 4rem
+
+    &__right
+        text-align: right
+
+    

@@ -10,9 +10,7 @@
 }
 
 body {
-  background-image: url("/image/rainBackground2.jpg");
-  background-size: cover;
-  background-position: center;
+  background-image: url("/image/smokeBackground.jpg");
   width: 100vw;
   font-family: "Poppins", sans-serif;
 }
@@ -149,8 +147,11 @@ body {
 }
 .todayStatistics__bottomBox {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding-bottom: 20px;
 }
 .todayStatistics__weatherBox {
   display: flex;
@@ -158,4 +159,45 @@ body {
   align-content: center;
   align-items: center;
   justify-content: center;
+  margin-right: 20px;
+}
+
+.dayStatistics {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+}
+.dayStatistics__top {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+.dayStatistics__bottom {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+.dayStatistics__icon {
+  width: 30px;
+  height: 25px;
+  margin-left: 10px;
+}
+.dayStatistics__cityWeather {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: flex-end;
+}
+.dayStatistics__temperature {
+  font-size: 4rem;
+}
+.dayStatistics__right {
+  text-align: right;
 }/*# sourceMappingURL=main.css.map */
