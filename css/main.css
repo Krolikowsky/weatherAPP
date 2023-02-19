@@ -156,4 +156,52 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   padding-top: 20px;
+}
+
+.daysSection {
+  padding: 20px;
+}
+.daysSection__slider {
+  width: 100%;
+  display: flex;
+}
+.daysSection__slide {
+  width: 33%;
+  padding-top: 30px;
+}
+.daysSection__icon {
+  width: 60px;
+  padding-top: 10px;
+}
+.daysSection__dayParagraph {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding: 5px 0px;
+}
+.daysSection__temperatureBox {
+  padding: 10px 0px;
+}
+.daysSection__dayTemperature {
+  font-size: 3rem;
+  color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding: 5px 0px;
+  line-height: 2.5rem;
+}
+.daysSection__nightTemperature {
+  font-size: 2rem;
+  color: #BBBBBB;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding: 5px 0px;
+  line-height: 2rem;
+  margin-left: 10px;
+}
+.daysSection__temperatureBox {
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
 }/*# sourceMappingURL=main.css.map */
