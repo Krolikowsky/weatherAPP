@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 *,
 ::after,
 ::before {
@@ -10,194 +10,150 @@
 }
 
 body {
-  background-image: url("/image/smokeBackground.jpg");
   width: 100vw;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
+  background: #3f6cb1;
 }
 
-.paragraph {
-  font-size: 1.6rem;
+.headingOne {
+  font-size: 3.5rem;
   color: #FFFFFF;
+  font-family: "Lato", sans-serif;
   font-weight: 300;
-}
-
-.paragraphBold {
-  font-size: 1.6rem;
-  color: #FFFFFF;
-  font-weight: 500;
 }
 
 .headingTwo {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #FFFFFF;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
 }
 
-.searchBar {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
-  padding: 20px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-.searchBar__input {
-  width: 80%;
-  border-radius: 8px;
-  margin: 0px 20px;
-  background: transparent;
-  border: 1px solid #FFFFFF;
+.paragraph {
+  font-size: 1.5rem;
   color: #FFFFFF;
-  font-size: 1.6rem;
-  padding: 10px;
-}
-.searchBar__icon {
-  width: 30px;
-  height: 30px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 .mainInformation {
-  width: 80%;
-  margin: 20% auto;
+  width: 100vw;
+  padding: 20px;
+}
+.mainInformation__city {
+  text-align: center;
+}
+.mainInformation__weatherBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.mainInformation__mainTemperature {
+  font-size: 10rem;
+  font-weight: 300;
+  color: #FFFFFF;
+  line-height: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin: 0 20px;
+}
+.mainInformation__degree {
+  font-size: 5rem;
+  line-height: 6rem;
+}
+.mainInformation__celsius {
+  color: #FFFFFF;
+  font-size: 3rem;
+  line-height: 3rem;
+  margin-bottom: 10px;
+}
+.mainInformation__fahrenheit {
+  color: #FFFFFF;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.mainInformation__chooseScaleBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.mainInformation__descriptionWeather {
+  text-align: center;
+  font-weight: 400;
 }
 .mainInformation__time {
   text-align: center;
-}
-.mainInformation__city {
-  font-size: 3rem;
-  color: #FFFFFF;
-  font-weight: 300;
-  text-align: center;
-}
-.mainInformation__weatherMainInformation {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-.mainInformation__image {
-  width: 80px;
-}
-.mainInformation__temperature {
-  font-size: 11rem;
-  color: #FFFFFF;
-  line-height: 11rem;
-  font-weight: 200;
-}
-.mainInformation__o {
-  font-size: 4rem;
-  color: #FFFFFF;
-}
-.mainInformation__changeCF {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  margin-top: 10px;
-}
-.mainInformation__celsius {
-  font-size: 2rem;
-  color: #FFFFFF;
-}
-.mainInformation__fahrenheit {
-  font-size: 2rem;
-  color: #FFFFFF;
-}
-.mainInformation__weather {
-  font-size: 2.5rem;
-  color: #FFFFFF;
-  text-align: center;
-  font-weight: 300;
-}
-
-.statistics {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.statistics__box {
-  width: 45%;
-  text-align: center;
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  margin-bottom: 20px;
   padding: 10px;
 }
-.statistics__image {
-  width: 30px;
-}
-
-.todayStatistics {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 20px;
-  margin: 0px 20px;
-  border-radius: 8px;
-}
-.todayStatistics__top {
+.mainInformation__accurateWeatherInformation {
   display: flex;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
-}
-.todayStatistics__bottomBox {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 20px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding-bottom: 20px;
-}
-.todayStatistics__weatherBox {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-right: 20px;
-}
-
-.dayStatistics {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 20px;
-  margin: 20px;
-  border-radius: 8px;
-}
-.dayStatistics__top {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
-}
-.dayStatistics__bottom {
-  display: flex;
   padding-top: 20px;
-  justify-content: space-between;
-  align-items: flex-end;
-  align-content: flex-end;
 }
-.dayStatistics__icon {
-  width: 30px;
-  height: 25px;
-  margin-left: 10px;
+.mainInformation__accurateWeatherInformation .paragraph {
+  padding: 5px 10px;
 }
-.dayStatistics__cityWeather {
+
+.hoursSection {
+  padding: 20px;
+}
+.hoursSection__slider {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: flex-end;
 }
-.dayStatistics__temperature {
-  font-size: 4rem;
+.hoursSection__slide {
+  width: 33%;
+  padding-top: 30px;
 }
-.dayStatistics__right {
-  text-align: right;
+.hoursSection__icon {
+  width: 60px;
+}
+.hoursSection__temperature {
+  font-size: 3rem;
+  color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding: 5px 0px;
+}
+.hoursSection__informationParagraph {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.hoursSection__humidity {
+  font-size: 1.5rem;
+  color: #BBBBBB;
+  font-family: "Lato", sans-serif;
+  padding-top: 15px;
+  display: flex;
+  align-content: center;
+}
+.hoursSection__wind {
+  font-size: 1.5rem;
+  color: #BBBBBB;
+  font-family: "Lato", sans-serif;
+  padding-top: 7px;
+  display: flex;
+  align-content: center;
+}
+.hoursSection__smallIcon {
+  margin-right: 5px;
+  width: 1.5rem;
+}
+.hoursSection__hour {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding-top: 20px;
 }/*# sourceMappingURL=main.css.map */
