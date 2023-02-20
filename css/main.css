@@ -204,4 +204,36 @@ body {
   display: flex;
   align-items: flex-end;
   align-content: flex-end;
+}
+
+.moreInformation {
+  padding: 20px;
+}
+.moreInformation__day {
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding: 20px 0px 5px 0px;
+}
+.moreInformation__time {
+  font-size: 3rem;
+  color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  padding: 5px 0px;
+  line-height: 2.5rem;
+}
+.moreInformation__icon {
+  width: 40px;
+  margin-right: 5px;
+}
+.moreInformation__sunBox {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.moreInformation__sunSetInformationBox {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=main.css.map */
