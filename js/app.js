@@ -14,7 +14,12 @@ const visibilityParagraph = document.querySelector(".mainInformation__visibility
 const pressureParagraph = document.querySelector(".mainInformation__pressureParagraph")
 const humidityParagraph = document.querySelector(".mainInformation__humidityParagraph")
 const maximumTemperatureParagraph = document.querySelector(".mainInformation__maximumParagraph")
+
 const dailySlider = document.querySelector(".daysSection__slider")
+const hourlySlider = document.querySelector(".hoursSection__slider")
+
+const sunriseParagraph = document.querySelector(".moreInformation__sunrise")
+const sunsetParagraph = document.querySelector(".moreInformation__sunset")
 
 window.addEventListener('DOMContentLoaded', () => connectAPI())
 
@@ -23,11 +28,19 @@ searchIcon.addEventListener("click", () => {
     connectAPI()
 })
 
-const downloadMainInformation = (response) => {
-    let temperature = response.list[0].main.temp
-    let minTemperature = response.list[0].main.temp_min
-    let maxTemperature = response.list[0].main.temp_max
+const downloadSunrise = (response) => {
+    let sunrise = response.city.sunrise
+    let sunriseTime = new Date(sunrise * 1000)
+    sunriseParagraph.textContent = sunriseTime.toLocaleTimeString().slice(0, 5)
+}
 
+const downloadSunset = (response) => {
+    let sunset = response.city.sunset
+    let sunsetTime = new Date(sunset * 1000)
+    sunsetParagraph.textContent = sunsetTime.toLocaleTimeString().slice(0, 5)
+}
+
+const downloadMainInformation = (response) => {
     mainDescriptionWeather.textContent = response.list[0].weather[0].main
     mainTemperature.textContent = response.list[0].main.temp.toFixed(1)
     maximumTemperatureParagraph.textContent = `Temperatura minimalna ${response.list[0].main.temp_max.toFixed(1)}°`
@@ -82,6 +95,8 @@ const connectAPI = () => {
             downloadCityName(response)
             downloadMainInformation(response)
             downloadDailyWeather(response)
+            downloadSunrise(response)
+            downloadSunset(response)
         })
 
     timeUpdate()
