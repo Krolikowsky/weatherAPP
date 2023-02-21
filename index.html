@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather APP - Szymon Królikowski</title>
     <link rel="stylesheet" href="/css/main.css">
+    <script defer src="/js/app.js"></script>
 </head>
 <body>
-    <script src="/js/main.js"></script>
+    <section class="topBar">
+        <img class="topBar__icon" src="/image/pin.png">
+        <input class="topBar__input" type="text">
+        <img class="topBar__icon topBar__searchIcon" src="/image/pin.png">
+    </section>
     <section class="mainInformation">
         <h1 class="headingOne mainInformation__city">Poznań</h1>
         <div class="mainInformation__weatherBox">
@@ -20,14 +25,14 @@
             </div>
         </div>
         <h2 class="headingTwo mainInformation__descriptionWeather">Zachmurzenie całkowite</h2>
-        <p class="paragraph mainInformation__time">Zaktualizowano o godzinie 13:48</p>
+        <p class="paragraph mainInformation__time">Zaktualizowano o godzinie <span class="paragraph mainInformation__spanHour">13:48</span></p>
         <div class="mainInformation__accurateWeatherInformation">
-            <p class="paragraph">Temperatura minimalna 1°</p>
-            <p class="paragraph">Wiatr 31km/h</p>
-            <p class="paragraph">Widoczność 10km</p>
-            <p class="paragraph">Ciśnienie 100hPa</p>
-            <p class="paragraph">Wilgotność 48%</p>
-            <p class="paragraph">Temperatura minimalna 2°</p>
+            <p class="paragraph mainInformation__minimumTemperature">Temperatura minimalna 1°</p>
+            <p class="paragraph mainInformation__windParagraph">Wiatr 31km/h</p>
+            <p class="paragraph mainInformation__visibilityParagraph">Widoczność 10km</p>
+            <p class="paragraph mainInformation__pressureParagraph">Ciśnienie 100hPa</p>
+            <p class="paragraph mainInformation__humidityParagraph">Wilgotność 48%</p>
+            <p class="paragraph mainInformation__maximumParagraph">Temperatura maksymalna 2°</p>
         </div>
     </section>
 
@@ -82,7 +87,7 @@
     <section class="moreInformation">
         <h2 class="headingTwo">Szczegóły dna</h2>
         <p class="paragraph moreInformation__day">Dzień</p>
-        <p class="paragraph">Niebo będzie zachmurzone. Wystąpią porywiste wiatry. Maksymalna temperatura wyniesie 9°C</p>
+        <p class="paragraph">Niebo będzie zachmurzone. Wystąpią porywiste wiatry. Maksymalna temperatura wyniesie 9°</p>
         <p class="paragraph moreInformation__day">Noc</p>
         <p class="paragraph">Oczekiwany przelotny deszcz. Noc będzie wietrzna, Minimalna temperatura wyniesie 8°</p>
         <div class="moreInformation__sunSetInformationBox">
