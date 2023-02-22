@@ -51,6 +51,41 @@ const downloadMainInformation = (response) => {
     windParagraph.textContent = `Wiatr ${response.list[0].wind.speed} km/h`
 }
 
+const downloadHourlyWeather = (response) => {
+    let currentTime = new Date()
+    let currentDay = currentTime.getDate()
+    let currentMonth = currentTime.getMonth()
+
+    if(currentDay < 10) {
+        currentDay = `0${currentDay}`
+    }
+
+    if(currentMonth < 10) {
+        currentMonth = `0${currentMonth + 1}`
+    }
+
+    for(let i = 0; i < 8; i++) {
+        let todayList = response.list[i].dt_txt
+        let todayListDate = `${currentMonth}-${currentDay}`
+
+        if(todayList.includes(todayListDate)) {
+            let currentDate = response.list[i].dt_txt
+
+            const hourlyStatisticsBox = document.createElement("div")
+            hourlyStatisticsBox.innerHTML = 
+            `<img class="hoursSection__icon" src="/image/clouds.png">
+            <p class="hoursSection__temperature">${response.list[i].main.temp.toFixed(0)}°</p>
+            <p class="hoursSection__informationParagraph">${response.list[i].weather[0].main}</p>
+            <p class="hoursSection__humidity"><img class="hoursSection__smallIcon" src="/image/drop-icon.png"/>${response.list[i].main.humidity}%</p>
+            <p class="hoursSection__wind"><img class="hoursSection__smallIcon" src="/image/wind-direction.png"/>${response.list[i].wind.speed.toFixed(0)}km/h</p>
+            <p class="hoursSection__hour">${currentDate.slice(-8, -3)}</p>`
+
+            hourlyStatisticsBox.classList.add("hoursSection__slide")
+            hourlySlider.appendChild(hourlyStatisticsBox)
+        }
+    }
+}
+
 const downloadDailyWeather = (response) => {
     for (let i = 0; i < 30; i++) {
         let currentDate = response.list[i].dt_txt
@@ -94,6 +129,7 @@ const connectAPI = () => {
         .then((response) => {
             downloadCityName(response)
             downloadMainInformation(response)
+            downloadHourlyWeather(response)
             downloadDailyWeather(response)
             downloadSunrise(response)
             downloadSunset(response)
