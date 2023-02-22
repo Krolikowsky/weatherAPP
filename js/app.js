@@ -124,6 +124,9 @@ const connectAPI = () => {
     const API_KEY = `d531ef0a02c5a713565a1b96de1fa8df`
     const API_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchCityName}&appid=${API_KEY}&units=metric`
 
+    hourlySlider.innerHTML = ""
+    dailySlider.innerHTML = ""
+
     fetch(API_URL)
         .then(response => response.json())
         .then((response) => {
