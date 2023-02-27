@@ -1,223 +1,185 @@
 .topBar
-    width: 100vw
-    padding: $padding
+    width: 100%
+    padding: $paddingSection
+    background: $white
+    border-radius: $borderRadius
     display: flex
     flex-direction: row
     justify-content: space-between
-    align-content: center
-    align-items: center
+    align-content: flex-end
+    flex-wrap: wrap
 
     &__input
-        width: 75%
-        background: rgba(255, 255, 255, 0.2)
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
-        backdrop-filter: blur(5px)
-        -webkit-backdrop-filter: blur(5px)
-        border: none
-        border-radius: 16px
-        font-size: 1.5rem
-        color: $white
-        font-family: 'Lato', sans-serif
+        width: 85%
+        border-top: none
+        border-left: none
+        border-right: none
+        border-bottom: 1px solid $borderColor
+        font-family: 'Poppins', sans-serif
+        color: $black
         font-weight: 400
-        padding: 10px 10px
-        
-    &__icon
-        width: 25px
+        font-size: 1.4rem
+        line-height: 21px
+        letter-spacing: 1px
+        padding: 5px 5px
+
+        &:focus
+            outline: none
+            border-bottom: 1px solid $black
+
+    &__iconSearch
+        width: 35px
     
 .mainInformation
-    width: 100vw
-    padding: $padding
+    width: 100%
+    padding: $paddingSection
+    background: $white
+    border-radius: $borderRadius
+    margin: $marginSection
 
-    &__city
-        text-align: center
+    &__icon
+        width: 35px
+        margin-right: 15px
 
-    &__weatherBox
+    &__paragraph
+        margin-top: 5px
+
+    &__solarInformation
         display: flex
         flex-direction: row
-        justify-content: center
+        justify-content: space-between
+
+    &__sunrise,
+    &__sunset
+        display: flex
+        flex-direction: row
+        align-content: center
+        align-items: center
+        padding-top: 10px
+
+.weatherNow
+    width: 100%
+    padding: $paddingSection
+    background: $white
+    border-radius: $borderRadius
+    margin: $marginSection
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    &__temperatureParagraph
+        font-weight: 400
+        font-size: 2.8rem
+        line-height: 42px
+        letter-spacing: 1px
+        color: $blue
+        display: flex
         align-content: center
         align-items: center
 
-    &__mainTemperature
-        font-size: 10rem
-        font-weight: 300
-        color: $white
-        line-height: 10rem
-        display: flex
-        flex-direction: row
-        justify-content: flex-start
-        align-content: flex-start
-        align-items: flex-start
-        margin: 0 20px
+    &__feltTemperature
+        padding-left: 15px
 
-    &__degree
-        font-size: 5rem
-        line-height: 6rem
+    &__iconBox
+        width: 25%
 
-    &__celsius
-        color: $white
-        font-size: 3rem
-        line-height: 3rem
-        margin-bottom: 10px
-
-    &__fahrenheit
-        color: $white
-        font-size: 2rem
-        line-height: 2.5rem
-
-    &__chooseScaleBox
+    &__temperatureDescription
+        width: 65%
         display: flex
         flex-direction: column
         justify-content: center
-        align-content: center
-        align-items: center
-        margin-bottom: 1.5rem
 
-    &__descriptionWeather
-        text-align: center
-        font-weight: 400
-
-    &__time
-        text-align: center
-        padding: 10px
-
-    &__accurateWeatherInformation
-        display: flex
-        flex-wrap: wrap
-        justify-content: center
-        padding-top: 20px
-
-        .paragraph
-            padding: 5px 10px
-
-.hoursSection
-    padding: $padding
-
-    &__slider
+    &__icon
         width: 100%
+
+.weatherNowBox
+    width: 100%
+    margin: $marginSection
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    &__box
         display: flex
-
-    &__slide
-        width: 33%
-        padding-top: 30px
-
-    &__icon
-        width: 60px
-
-    &__temperature
-        font-size: 3rem
-        color: $white
-        font-family: 'Lato', sans-serif
-        font-weight: 400
-        padding: 5px 0px
-
-    &__informationParagraph
-        font-size: 1.5rem
-        color: $white
-        font-family: 'Lato', sans-serif
-        font-weight: 400
-
-    &__humidity
-        font-size: 1.5rem
-        color: $gray
-        font-family: 'Lato', sans-serif
-        padding-top: 15px
-        display: flex
-        align-content: center
-
-    &__wind
-        font-size: 1.5rem
-        color: $gray
-        font-family: 'Lato', sans-serif
-        padding-top: 7px
-        display: flex
-        align-content: center
-
-    &__smallIcon
-        margin-right: 5px
-        width: 1.5rem
-
-    &__hour
-        font-size: 2rem
-        color: $white
-        font-family: 'Lato', sans-serif
-        font-weight: 400
-        padding-top: 20px
-
-.daysSection
-    padding: $padding
-
-    &__slider
-        width: 100%
-        display: flex
-
-    &__slide
-        width: 33%
-        padding-top: 30px
-
-    &__icon
-        width: 60px
-        padding-top: 10px
-
-    &__dayParagraph
-        font-size: 2rem
-        color: $white
-        font-family: 'Lato', sans-serif
-        font-weight: 400
-        padding: 5px 0px
-
-    &__temperatureBox
-        padding: 10px 0px
-
-    &__dayTemperature
-        font-size: 3rem
-        color: $white
-        font-family: 'Lato', sans-serif
-        font-weight: 400
-        padding: 5px 0px
-        line-height: 2.5rem
-
-    &__nightTemperature
-        font-size: 2rem
-        color: $gray
-        font-family: 'Lato', sans-serif
-        font-weight: 400
-        padding: 5px 0px
-        line-height: 2rem
-        margin-left: 10px
-
-    &__temperatureBox
-        display: flex
-        align-items: flex-end
-        align-content: flex-end
-
-.moreInformation
-    padding: $padding
-
-    &__day
-        font-size: 2rem
-        color: $white
-        font-family: 'Lato', sans-serif
-        font-weight: 400
-        padding: 20px 0px 5px 0px
-
-    &__time
-        font-size: 3rem
-        color: $white
-        font-family: 'Lato', sans-serif
-        font-weight: 400
-        padding: 5px 0px
-        line-height: 2.5rem
-
-    &__icon
-        width: 40px
-        margin-right: 5px
-
-    &__sunBox
-        display: flex
-        align-content: center
-        align-items: center
-
-    &__sunSetInformationBox
-        display: flex
+        flex-direction: column
         justify-content: space-between
+        align-content: center
+        align-items: center
+        text-align: center
+        background-color: $white
+        width: 30%
+        border-radius: $borderRadius
+        padding: $paddingSection
+
+    &__icon
+        width: 35px
+
+    &__boxWithInformation
+        margin-top: 10px
+
+.todayWeather
+    width: 100%
+    margin: $marginSection
+
+    &__slider
+        display: flex
+        flex-direction: row
+
+    &__slide
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-content: center
+        align-items: center
+        text-align: center
+        background-color: $white
+        width: 18%
+        border-radius: $borderRadius
+        padding: $paddingSection
+        margin-right: 10px
+
+    &__icon
+        width: 35px
+
+    &__paragraphStrong
+        margin-bottom: 5px
+
+    &__paragraphBlue
+        margin-top: 5px
+
+.weatherForecast
+    width: 100%
+    margin: $marginSection
+
+.dailyWeather
+    width: 100%
+    margin: $marginSection
+
+    &__row
+        background-color: $white
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        padding: $paddingSection
+        align-content: center
+        align-items: center
+        border-bottom: 1px solid $borderColor
+
+        &:first-child
+            border-top-left-radius: $borderRadius
+            border-top-right-radius: $borderRadius
+
+        &:last-child
+            border-bottom-left-radius: $borderRadius
+            border-bottom-right-radius: $borderRadius
+
+    &__iconCenter
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
+        align-content: center
+
+    &__icon
+        width: 35px
+        margin-right: 5px

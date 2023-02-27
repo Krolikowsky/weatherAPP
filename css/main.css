@@ -1,266 +1,277 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 *,
 ::after,
 ::before {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
   font-size: 62.5%;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
   width: 100vw;
-  font-family: "Lato", sans-serif;
-  background: #3f6cb1;
+  max-width: 550px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  background-color: #F2F2F2;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
-.headingOne {
-  font-size: 3.5rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
+.paragraphStrong {
+  color: #000000;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 21px;
+  letter-spacing: 1px;
+}
+
+.paragraphGray {
+  color: #77838F;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 21px;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.paragraphBlue {
+  color: #679FFD;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 21px;
+  letter-spacing: 1px;
+}
+
+.paragraphRed {
+  color: #FF0000;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 21px;
+  letter-spacing: 1px;
+  width: 100%;
+  display: none;
+  margin-top: 10px;
+}
+
+.displayBlock {
+  display: block;
 }
 
 .headingTwo {
-  font-size: 2.5rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
+  color: #000000;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 21px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
 }
 
-.paragraph {
-  font-size: 1.5rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
+::-moz-placeholder {
+  color: #77838F;
   font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 21px;
+  letter-spacing: 1px;
+}
+
+::placeholder {
+  color: #77838F;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 21px;
+  letter-spacing: 1px;
 }
 
 .topBar {
-  width: 100vw;
-  padding: 20px;
+  width: 100%;
+  padding: 15px;
+  background: #FFFFFF;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-content: center;
-  align-items: center;
+  align-content: flex-end;
+  flex-wrap: wrap;
 }
 .topBar__input {
-  width: 75%;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: none;
-  border-radius: 16px;
-  font-size: 1.5rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
+  width: 85%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #D8D8D8;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
   font-weight: 400;
-  padding: 10px 10px;
+  font-size: 1.4rem;
+  line-height: 21px;
+  letter-spacing: 1px;
+  padding: 5px 5px;
 }
-.topBar__icon {
-  width: 25px;
+.topBar__input:focus {
+  outline: none;
+  border-bottom: 1px solid #000000;
+}
+.topBar__iconSearch {
+  width: 35px;
 }
 
 .mainInformation {
-  width: 100vw;
-  padding: 20px;
+  width: 100%;
+  padding: 15px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 30px 0px;
 }
-.mainInformation__city {
-  text-align: center;
+.mainInformation__icon {
+  width: 35px;
+  margin-right: 15px;
 }
-.mainInformation__weatherBox {
+.mainInformation__paragraph {
+  margin-top: 5px;
+}
+.mainInformation__solarInformation {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+}
+.mainInformation__sunrise, .mainInformation__sunset {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.weatherNow {
+  width: 100%;
+  padding: 15px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.weatherNow__temperatureParagraph {
+  font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 42px;
+  letter-spacing: 1px;
+  color: #679FFD;
+  display: flex;
   align-content: center;
   align-items: center;
 }
-.mainInformation__mainTemperature {
-  font-size: 10rem;
-  font-weight: 300;
-  color: #FFFFFF;
-  line-height: 10rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-  margin: 0 20px;
+.weatherNow__feltTemperature {
+  padding-left: 15px;
 }
-.mainInformation__degree {
-  font-size: 5rem;
-  line-height: 6rem;
+.weatherNow__iconBox {
+  width: 25%;
 }
-.mainInformation__celsius {
-  color: #FFFFFF;
-  font-size: 3rem;
-  line-height: 3rem;
-  margin-bottom: 10px;
-}
-.mainInformation__fahrenheit {
-  color: #FFFFFF;
-  font-size: 2rem;
-  line-height: 2.5rem;
-}
-.mainInformation__chooseScaleBox {
+.weatherNow__temperatureDescription {
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
-  align-items: center;
-  margin-bottom: 1.5rem;
 }
-.mainInformation__descriptionWeather {
-  text-align: center;
-  font-weight: 400;
-}
-.mainInformation__time {
-  text-align: center;
-  padding: 10px;
-}
-.mainInformation__accurateWeatherInformation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 20px;
-}
-.mainInformation__accurateWeatherInformation .paragraph {
-  padding: 5px 10px;
-}
-
-.hoursSection {
-  padding: 20px;
-}
-.hoursSection__slider {
+.weatherNow__icon {
   width: 100%;
-  display: flex;
-}
-.hoursSection__slide {
-  width: 33%;
-  padding-top: 30px;
-}
-.hoursSection__icon {
-  width: 60px;
-}
-.hoursSection__temperature {
-  font-size: 3rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  padding: 5px 0px;
-}
-.hoursSection__informationParagraph {
-  font-size: 1.5rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-}
-.hoursSection__humidity {
-  font-size: 1.5rem;
-  color: #BBBBBB;
-  font-family: "Lato", sans-serif;
-  padding-top: 15px;
-  display: flex;
-  align-content: center;
-}
-.hoursSection__wind {
-  font-size: 1.5rem;
-  color: #BBBBBB;
-  font-family: "Lato", sans-serif;
-  padding-top: 7px;
-  display: flex;
-  align-content: center;
-}
-.hoursSection__smallIcon {
-  margin-right: 5px;
-  width: 1.5rem;
-}
-.hoursSection__hour {
-  font-size: 2rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  padding-top: 20px;
 }
 
-.daysSection {
-  padding: 20px;
-}
-.daysSection__slider {
+.weatherNowBox {
   width: 100%;
+  margin: 30px 0px;
   display: flex;
-}
-.daysSection__slide {
-  width: 33%;
-  padding-top: 30px;
-}
-.daysSection__icon {
-  width: 60px;
-  padding-top: 10px;
-}
-.daysSection__dayParagraph {
-  font-size: 2rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  padding: 5px 0px;
-}
-.daysSection__temperatureBox {
-  padding: 10px 0px;
-}
-.daysSection__dayTemperature {
-  font-size: 3rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  padding: 5px 0px;
-  line-height: 2.5rem;
-}
-.daysSection__nightTemperature {
-  font-size: 2rem;
-  color: #BBBBBB;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  padding: 5px 0px;
-  line-height: 2rem;
-  margin-left: 10px;
-}
-.daysSection__temperatureBox {
-  display: flex;
-  align-items: flex-end;
-  align-content: flex-end;
-}
-
-.moreInformation {
-  padding: 20px;
-}
-.moreInformation__day {
-  font-size: 2rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  padding: 20px 0px 5px 0px;
-}
-.moreInformation__time {
-  font-size: 3rem;
-  color: #FFFFFF;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  padding: 5px 0px;
-  line-height: 2.5rem;
-}
-.moreInformation__icon {
-  width: 40px;
-  margin-right: 5px;
-}
-.moreInformation__sunBox {
-  display: flex;
-  align-content: center;
-  align-items: center;
-}
-.moreInformation__sunSetInformationBox {
-  display: flex;
+  flex-direction: row;
   justify-content: space-between;
+}
+.weatherNowBox__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #FFFFFF;
+  width: 30%;
+  border-radius: 10px;
+  padding: 15px;
+}
+.weatherNowBox__icon {
+  width: 35px;
+}
+.weatherNowBox__boxWithInformation {
+  margin-top: 10px;
+}
+
+.todayWeather {
+  width: 100%;
+  margin: 30px 0px;
+}
+.todayWeather__slider {
+  display: flex;
+  flex-direction: row;
+}
+.todayWeather__slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #FFFFFF;
+  width: 18%;
+  border-radius: 10px;
+  padding: 15px;
+  margin-right: 10px;
+}
+.todayWeather__icon {
+  width: 35px;
+}
+.todayWeather__paragraphStrong {
+  margin-bottom: 5px;
+}
+.todayWeather__paragraphBlue {
+  margin-top: 5px;
+}
+
+.weatherForecast {
+  width: 100%;
+  margin: 30px 0px;
+}
+
+.dailyWeather {
+  width: 100%;
+  margin: 30px 0px;
+}
+.dailyWeather__row {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+  align-content: center;
+  align-items: center;
+  border-bottom: 1px solid #D8D8D8;
+}
+.dailyWeather__row:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.dailyWeather__row:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.dailyWeather__iconCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.dailyWeather__icon {
+  width: 35px;
+  margin-right: 5px;
 }/*# sourceMappingURL=main.css.map */

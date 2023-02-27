@@ -10,101 +10,137 @@
 </head>
 <body>
     <section class="topBar">
-        <img class="topBar__icon" src="/image/pin.png">
-        <input class="topBar__input" type="text">
-        <img class="topBar__icon topBar__searchIcon" src="/image/pin.png">
+        <input placeholder="Search city" type="text" class="topBar__input">
+        <img class="topBar__iconSearch" src="/image/search.png" alt="">
+        <p class="paragraphRed">sdasa</p>
     </section>
+
     <section class="mainInformation">
-        <h1 class="headingOne mainInformation__city">Poznań</h1>
-        <div class="mainInformation__weatherBox">
-            <!-- <img class="mainInformation__weatherIcon" src="/image/smoke.png"> -->
-            <p class="paragraph mainInformation__mainTemperature">6<span class="mainInformation__degree">°</span></p>
-            <div class="mainInformation__chooseScaleBox">
-                <p class="paragraph mainInformation__celsius">C</p>
-                <p class="paragraph mainInformation__fahrenheit">F</p>
+        <p class="paragraphStrong mainInformation__city">Poznań</p>
+        <p class="paragraphGray mainInformation__spanHour"></p>
+        <div class="mainInformation__solarInformation">
+            <div class="mainInformation__sunrise">
+                <img class="mainInformation__icon" src="/image/sunrise.svg" alt="Sunrise">
+                <span class="paragraphGray"><span class="paragraphStrong">Sunrise:</span> <span class="paragraphGray moreInformation__sunrise">6:47</span></span>
             </div>
-        </div>
-        <h2 class="headingTwo mainInformation__descriptionWeather">Zachmurzenie całkowite</h2>
-        <p class="paragraph mainInformation__time">Zaktualizowano o godzinie <span class="paragraph mainInformation__spanHour">13:48</span></p>
-        <div class="mainInformation__accurateWeatherInformation">
-            <p class="paragraph mainInformation__minimumTemperature">Temperatura minimalna 1°</p>
-            <p class="paragraph mainInformation__windParagraph">Wiatr 31km/h</p>
-            <p class="paragraph mainInformation__visibilityParagraph">Widoczność 10km</p>
-            <p class="paragraph mainInformation__pressureParagraph">Ciśnienie 100hPa</p>
-            <p class="paragraph mainInformation__humidityParagraph">Wilgotność 48%</p>
-            <p class="paragraph mainInformation__maximumParagraph">Temperatura maksymalna 2°</p>
-        </div>
-    </section>
-
-    <section class="hoursSection">
-        <h2 class="headingTwo">Godzinowa</h2>
-        <div class="hoursSection__slider">
-            <div class="hoursSection__slide">
-                <img class="hoursSection__icon" src="/image/clouds.png">
-                <p class="hoursSection__temperature">6°</p>
-                <p class="hoursSection__informationParagraph">Przeważnie bezchmurnie</p>
-                <p class="hoursSection__humidity"><img class="hoursSection__smallIcon" src="/image/drop-icon.png"/> 0%</p>
-                <p class="hoursSection__wind"><img class="hoursSection__smallIcon" src="/image/wind-direction.png"/>23km/h</p>
-                <p class="hoursSection__hour">18:00</p>
-            </div>
-
-            <div class="hoursSection__slide">
-                <img class="hoursSection__icon" src="/image/clouds.png">
-                <p class="hoursSection__temperature">6°</p>
-                <p class="hoursSection__informationParagraph">Przeważnie bezchmurnie</p>
-                <p class="hoursSection__humidity"><img class="hoursSection__smallIcon" src="/image/drop-icon.png"/> 0%</p>
-                <p class="hoursSection__wind"><img class="hoursSection__smallIcon" src="/image/wind-direction.png"/>23km/h</p>
-                <p class="hoursSection__hour">18:00</p>
+            <div class="mainInformation__sunset">
+                <img class="mainInformation__icon" src="/image/sunset.svg" alt="Sunset">
+                <span class="paragraphGray"><span class="paragraphStrong">Sunset:</span> <span class="paragraphGray moreInformation__sunset">6:47</span></span>
             </div>
         </div>
     </section>
 
-    <section class="daysSection">
-        <h2 class="headingTwo">Dany dzień</h2>
-        <div class="daysSection__slider">
-            <div class="daysSection__slide">
-                <p class="daysSection__dayParagraph">19.02</p>
-                <img class="daysSection__icon" src="/image/clouds.png">
-                <div class="daysSection__temperatureBox">
-                    <p class="daysSection__dayTemperature">6°</p>
-                    <p class="daysSection__nightTemperature">0°</p>
-                </div>
-                <p class="paragraph">Częściowo słonecznie</p>
+    <section class="weatherNow">
+        <div class="weatherNow__iconBox"></div>
+        <div class="weatherNow__temperatureDescription">
+            <div style="display: flex; align-items: center;">
+                <p class="weatherNow__temperatureParagraph">23°C</p>
+                <spna class="weatherNow__feltTemperature paragraphBlue">Felt 20°C</spna>
             </div>
+            <p class="paragraphBlue weatherNow__Description">Sun</p>
+        </div>
+    </section>
 
-            <div class="daysSection__slide">
-                <p class="daysSection__dayParagraph">19.02</p>
-                <img class="daysSection__icon" src="/image/clouds.png">
-                <div class="daysSection__temperatureBox">
-                    <p class="daysSection__dayTemperature">6°</p>
-                    <p class="daysSection__nightTemperature">0°</p>
-                </div>
-                <p class="paragraph">Częściowo słonecznie</p>
+    <section class="weatherNowBox">
+        <div class="weatherNowBox__box">
+            <img class="weatherNowBox__icon" src="image/humidity.svg" alt="">
+            <div class="weatherNowBox__boxWithInformation">
+                <p class="paragraphStrong">Humidity</p>
+                <p class="paragraphGray weatherNowBox__humidityParagraph">48%</p>
+            </div>
+        </div>
+        <div class="weatherNowBox__box">
+            <img class="weatherNowBox__icon" src="image/wind.svg" alt="">
+            <div class="weatherNowBox__boxWithInformation">
+                <p class="paragraphStrong">Wind</p>
+                <p class="paragraphGray weatherNowBox__windParagraph">2.5km/h</p>
+            </div>
+        </div>
+        <div class="weatherNowBox__box">
+            <img class="weatherNowBox__icon" src="/image/temperature.svg" alt="">
+            <div class="weatherNowBox__boxWithInformation">
+                <p class="paragraphStrong">Pressure</p>
+                <p class="paragraphGray weatherNowBox__pressureParagraph">1023hPa</p>
             </div>
         </div>
     </section>
 
-    <section class="moreInformation">
-        <h2 class="headingTwo">Szczegóły dna</h2>
-        <p class="paragraph moreInformation__day">Dzień</p>
-        <p class="paragraph">Niebo będzie zachmurzone. Wystąpią porywiste wiatry. Maksymalna temperatura wyniesie 9°</p>
-        <p class="paragraph moreInformation__day">Noc</p>
-        <p class="paragraph">Oczekiwany przelotny deszcz. Noc będzie wietrzna, Minimalna temperatura wyniesie 8°</p>
-        <div class="moreInformation__sunSetInformationBox">
-            <div>
-                <p class="paragraph moreInformation__day">Wschód Słońca</p>
-                <div class="moreInformation__sunBox">
-                    <img class="moreInformation__icon" src="/image/clear.png">
-                    <p class="moreInformation__time">6:50</p>
-                </div>
+    <section class="todayWeather">
+        <h2 class="headingTwo">Today</h2>
+        <div class="todayWeather__slider">
+            <div class="todayWeather__slide">
+                <p class="paragraphStrong todayWeather__paragraphStrong">03:00</p>
+                <img class="todayWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphBlue todayWeather__paragraphBlue">20°C</p>
             </div>
-            <div>
-                <p class="paragraph moreInformation__day">Zachód Słońca</p>
-                <div class="moreInformation__sunBox">
-                    <img class="moreInformation__icon" src="/image/clear.png">
-                    <p class="moreInformation__time">6:50</p>
-                </div>
+            <div class="todayWeather__slide">
+                <p class="paragraphStrong todayWeather__paragraphStrong">03:00</p>
+                <img class="todayWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphBlue todayWeather__paragraphBlue">20°C</p>
             </div>
+            <div class="todayWeather__slide">
+                <p class="paragraphStrong todayWeather__paragraphStrong">03:00</p>
+                <img class="todayWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphBlue todayWeather__paragraphBlue">20°C</p>
+            </div>
+            <div class="todayWeather__slide">
+                <p class="paragraphStrong todayWeather__paragraphStrong">03:00</p>
+                <img class="todayWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphBlue todayWeather__paragraphBlue">20°C</p>
+            </div>
+            <div class="todayWeather__slide">
+                <p class="paragraphStrong todayWeather__paragraphStrong">03:00</p>
+                <img class="todayWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphBlue todayWeather__paragraphBlue">20°C</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="weatherForecast">
+        <h2 class="headingTwo">Weather Forecast</h2>
+        <p class="paragraphGray weatherForecast__description">The best weather description for today is this:</p>
+    </section>
+
+    <section class="dailyWeather">
+        <div class="dailyWeather__row">
+            <p class="paragraphStrong">23.02</p>
+            <div class="dailyWeather__iconCenter">
+                <img class="dailyWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphGray">Sunny</p>
+            </div>
+            <p class="paragraphBlue">11/13°C</p>
+        </div>
+        <div class="dailyWeather__row">
+            <p class="paragraphStrong">23.02</p>
+            <div class="dailyWeather__iconCenter">
+                <img class="dailyWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphGray">Sunny</p>
+            </div>
+            <p class="paragraphBlue">11/13°C</p>
+        </div>3
+        <div class="dailyWeather__row">
+            <p class="paragraphStrong">23.02</p>
+            <div class="dailyWeather__iconCenter">
+                <img class="dailyWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphGray">Sunny</p>
+            </div>
+            <p class="paragraphBlue">11/13°C</p>
+        </div>
+        <div class="dailyWeather__row">
+            <p class="paragraphStrong">23.02</p>
+            <div class="dailyWeather__iconCenter">
+                <img class="dailyWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphGray">Sunny</p>
+            </div>
+            <p class="paragraphBlue">11/13°C</p>
+        </div>
+        <div class="dailyWeather__row">
+            <p class="paragraphStrong">23.02</p>
+            <div class="dailyWeather__iconCenter">
+                <img class="dailyWeather__icon" src="/image/sunny.svg" alt="">
+                <p class="paragraphGray">Sunny</p>
+            </div>
+            <p class="paragraphBlue">11/13°C</p>
         </div>
     </section>
 </body>

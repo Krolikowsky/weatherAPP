@@ -1,41 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap')
 
 *,
 ::after,
 ::before
     margin: 0px
     padding: 0px
-    box-sizing: border-box
     font-size: 62.5%
     scroll-behavior: smooth
+    box-sizing: border-box
 
 $white: #FFFFFF
-$gray: #BBBBBB
+$gray: #F2F2F2
+$grayParagraph: #77838F
+$black: #000000
+$blue: #679FFD
+$borderColor: #D8D8D8
+$red: #FF0000
+
 $borderRadius: 8px
-$padding: 20px
+$paddingSection: 15px
+$borderRadius: 10px
+$marginSection: 30px 0px
 
 body
     width: 100vw
-    font-family: 'Lato', sans-serif
-    background: #3f6cb1
+    max-width: 550px
+    margin: 0 auto
+    font-family: 'Poppins', sans-serif
+    background-color: $gray
+    padding: $paddingSection
+    box-sizing: border-box
 
-.headingOne 
-    font-size: 3.5rem
-    color: $white
-    font-family: 'Lato', sans-serif
-    font-weight: 300
-    
+.paragraphStrong
+    color: $black
+    font-weight: 500
+    font-size: 1.4rem
+    line-height: 21px
+    letter-spacing: 1px
+
+.paragraphGray
+    color: $grayParagraph
+    font-weight: 400
+    font-size: 1.4rem
+    line-height: 21px
+    letter-spacing: 1px
+    margin-top: 5px
+
+.paragraphBlue
+    color: $blue
+    font-weight: 400
+    font-size: 1.4rem
+    line-height: 21px
+    letter-spacing: 1px
+
+.paragraphRed
+    color: $red
+    font-weight: 400
+    font-size: 1.4rem
+    line-height: 21px
+    letter-spacing: 1px
+    width: 100%
+    display: none
+    margin-top: 10px
+
+.displayBlock
+    display: block
+
 .headingTwo
-    font-size: 2.5rem
-    color: $white
-    font-family: 'Lato', sans-serif
-    font-weight: 400
+    color: $black
+    font-weight: 500
+    font-size: 1.6rem
+    line-height: 21px
+    letter-spacing: 1px
+    margin-bottom: 15px
 
-.paragraph
-    font-size: 1.5rem
-    color: $white
-    font-family: 'Lato', sans-serif
+::placeholder
+    color: $grayParagraph
     font-weight: 400
+    font-size: 1.4rem
+    line-height: 21px
+    letter-spacing: 1px
     
-
 @import "./_small"
