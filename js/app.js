@@ -1,32 +1,33 @@
 let searchCityName = `Poznań`
 
 const searchInput = document.querySelector(".topBar__input")
-const searchIcon = document.querySelector(".topBar__searchIcon")
+const searchIcon = document.querySelector(".topBar__iconSearch")
+const errorInformation = document.querySelector(".paragraphRed")
 
 const mainCityName = document.querySelector(".mainInformation__city")
-const mainTemperature = document.querySelector(".mainInformation__mainTemperature")
-const mainDescriptionWeather = document.querySelector(".mainInformation__descriptionWeather")
+const mainTemperature = document.querySelector(".weatherNow__temperatureParagraph")
+const mainDescriptionWeather = document.querySelector(".weatherNow__Description")
 const refreshHour = document.querySelector(".mainInformation__spanHour")
+const feltTemperature = document.querySelector(".weatherNow__feltTemperature")
+const weatherNowIconBox = document.querySelector(".weatherNow__iconBox")
 
-const minimumTemperatureParagraph = document.querySelector(".mainInformation__minimumTemperature")
-const windParagraph = document.querySelector(".mainInformation__windParagraph")
-const visibilityParagraph = document.querySelector(".mainInformation__visibilityParagraph")
-const pressureParagraph = document.querySelector(".mainInformation__pressureParagraph")
-const humidityParagraph = document.querySelector(".mainInformation__humidityParagraph")
-const maximumTemperatureParagraph = document.querySelector(".mainInformation__maximumParagraph")
+const windParagraph = document.querySelector(".weatherNowBox__windParagraph")
+const pressureParagraph = document.querySelector(".weatherNowBox__pressureParagraph")
+const humidityParagraph = document.querySelector(".weatherNowBox__humidityParagraph")
 
-const dailySlider = document.querySelector(".daysSection__slider")
-const hourlySlider = document.querySelector(".hoursSection__slider")
+const dailySlider = document.querySelector(".dailyWeather")
+const hourlySlider = document.querySelector(".todayWeather__slider")
+const weatherForecast = document.querySelector(".weatherForecast__description")
 
 const sunriseParagraph = document.querySelector(".moreInformation__sunrise")
 const sunsetParagraph = document.querySelector(".moreInformation__sunset")
-
-window.addEventListener('DOMContentLoaded', () => connectAPI())
 
 searchIcon.addEventListener("click", () => {
     searchCityName = searchInput.value
     connectAPI()
 })
+
+window.addEventListener('DOMContentLoaded', () => connectAPI())
 
 const downloadSunrise = (response) => {
     let sunrise = response.city.sunrise
@@ -42,13 +43,13 @@ const downloadSunset = (response) => {
 
 const downloadMainInformation = (response) => {
     mainDescriptionWeather.textContent = response.list[0].weather[0].main
-    mainTemperature.textContent = response.list[0].main.temp.toFixed(1)
-    maximumTemperatureParagraph.textContent = `Temperatura minimalna ${response.list[0].main.temp_max.toFixed(1)}°`
-    minimumTemperatureParagraph.textContent = `Temperatura minimalna ${response.list[0].main.temp_min.toFixed(1)}°`
-    visibilityParagraph.textContent = `Widoczność ${(response.list[0].visibility / 1000)}km`
-    pressureParagraph.textContent = `Ciśnienie ${response.list[0].main.pressure}hPa`
-    humidityParagraph.textContent = `Wilgotność ${response.list[0].main.humidity}%`
-    windParagraph.textContent = `Wiatr ${response.list[0].wind.speed} km/h`
+    mainTemperature.textContent = `${response.list[0].main.temp.toFixed(1)}°C`
+    pressureParagraph.textContent = `${response.list[0].main.pressure}hPa`
+    humidityParagraph.textContent = `${response.list[0].main.humidity}%`
+    windParagraph.textContent = `${response.list[0].wind.speed.toFixed(1)}km/h`
+    feltTemperature.textContent = `Felt ${response.list[0].main.feels_like.toFixed(1)}°C`
+    weatherNowIconBox.innerHTML = `<img class="weatherNow__icon" src="/image/${response.list[0].weather[0].id}.svg"/>`
+    weatherForecast.textContent = `The best weather description for today is this: ${response.list[0].weather[0].description}.`
 }
 
 const downloadHourlyWeather = (response) => {
@@ -73,14 +74,11 @@ const downloadHourlyWeather = (response) => {
 
             const hourlyStatisticsBox = document.createElement("div")
             hourlyStatisticsBox.innerHTML = 
-            `<img class="hoursSection__icon" src="/image/clouds.png">
-            <p class="hoursSection__temperature">${response.list[i].main.temp.toFixed(0)}°</p>
-            <p class="hoursSection__informationParagraph">${response.list[i].weather[0].main}</p>
-            <p class="hoursSection__humidity"><img class="hoursSection__smallIcon" src="/image/drop-icon.png"/>${response.list[i].main.humidity}%</p>
-            <p class="hoursSection__wind"><img class="hoursSection__smallIcon" src="/image/wind-direction.png"/>${response.list[i].wind.speed.toFixed(0)}km/h</p>
-            <p class="hoursSection__hour">${currentDate.slice(-8, -3)}</p>`
+            `<p class="paragraphStrong todayWeather__paragraphStrong">${currentDate.slice(-8, -3)}</p>
+            <img class="todayWeather__icon" src="/image/${response.list[i].weather[0].id}.svg" alt="">
+            <p class="paragraphBlue todayWeather__paragraphBlue">${response.list[i].main.temp.toFixed(0)}°C</p>`
 
-            hourlyStatisticsBox.classList.add("hoursSection__slide")
+            hourlyStatisticsBox.classList.add("todayWeather__slide")
             hourlySlider.appendChild(hourlyStatisticsBox)
         }
     }
@@ -97,15 +95,14 @@ const downloadDailyWeather = (response) => {
 
             const dayStatisticsBox = document.createElement("div")
             dayStatisticsBox.innerHTML = 
-            `<p class="daysSection__dayParagraph">${currentDay}</p>
-            <img class="daysSection__icon" src="/image/${response.list[i].weather[0].main}.png">
-            <div class="daysSection__temperatureBox">
-                <p class="daysSection__dayTemperature">${response.list[i].main.temp_max.toFixed(0)}°</p>
-                <p class="daysSection__nightTemperature">${response.list[i].main.temp_min.toFixed(0)}°</p>
+            `<p style="width: 35%; text-align: left" class="paragraphStrong">${currentDay}</p>
+            <div style="width: 40%" class="dailyWeather__iconCenter">
+                <img class="dailyWeather__icon" src="/image/${response.list[i].weather[0].id}.svg" alt="">
+                <p class="paragraphGray">${response.list[i].weather[0].main}</p>
             </div>
-            <p class="paragraph">${response.list[i].weather[0].main}</p>`
+            <p style="width: 20%; text-align: right" class="paragraphBlue">${response.list[i].main.temp_max.toFixed(0)}/${response.list[i].main.temp_min.toFixed(0)}°C</p>`
 
-            dayStatisticsBox.classList.add("hoursSection__slide")
+            dayStatisticsBox.classList.add("dailyWeather__row")
             dailySlider.appendChild(dayStatisticsBox)
         } 
     }
@@ -117,7 +114,11 @@ const downloadCityName = (response) => {
 
 const timeUpdate = () => {
     let currentTime = new Date()
-    refreshHour.textContent = `${currentTime.getHours()}:${currentTime.getMinutes()}`
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    const day = currentTime.getDay()
+    const month = currentTime.getMonth()
+    refreshHour.textContent = `${days[day]}, ${currentTime.getDate()} ${months[month]} ${currentTime.getHours()}:${currentTime.getMinutes()}`
 }
 
 const connectAPI = () => {
@@ -136,6 +137,14 @@ const connectAPI = () => {
             downloadDailyWeather(response)
             downloadSunrise(response)
             downloadSunset(response)
+            errorInformation.classList.remove("displayBlock")
+            searchInput.style.borderBottom = "1px solid #D8D8D8"
+            console.log(response)
+        })
+        .catch((error) => {
+            errorInformation.classList.add("displayBlock")
+            searchInput.style.borderBottom = "1px solid #FF0000"
+            errorInformation.textContent = `The city name is incorrect: ${searchCityName}`
         })
 
     timeUpdate()
