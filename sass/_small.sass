@@ -1,0 +1,58 @@
+.topBar
+    width: 100%
+    padding: $paddingSection
+    background: $white
+    border-radius: $borderRadius
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-content: flex-end
+    flex-wrap: wrap
+
+    &__input
+        width: 85%
+        border-top: none
+        border-left: none
+        border-right: none
+        border-bottom: 1px solid $borderColor
+        font-family: 'Poppins', sans-serif
+        color: $black
+        font-weight: 400
+        font-size: 1.4rem
+        line-height: 21px
+        letter-spacing: 1px
+        padding: 5px 5px
+
+        &:focus
+            outline: none
+            border-bottom: 1px solid $black
+
+    &__iconSearch
+        width: 35px
+    
+.mainInformation
+    width: 100%
+    padding: $paddingSection
+    background: $white
+    border-radius: $borderRadius
+    margin: $marginSection
+
+    &__icon
+        width: 35px
+        margin-right: 15px
+
+    &__paragraph
+        margin-top: 5px
+
+    &__solarInformation
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+    &__sunrise,
+    &__sunset
+        display: flex
+        flex-direction: row
+        align-content: center
+        align-items: center
+        padding-top: 10px
