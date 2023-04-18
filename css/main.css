@@ -204,4 +204,40 @@ body {
 }
 .weatherNowBox__boxWithInformation {
   margin-top: 10px;
+}
+
+.todayWeather {
+  width: 100%;
+  margin: 30px 0px;
+}
+.todayWeather__slider {
+  display: flex;
+  flex-direction: row;
+}
+.todayWeather__slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #FFFFFF;
+  width: 18%;
+  border-radius: 10px;
+  padding: 15px;
+  margin-right: 10px;
+}
+.todayWeather__icon {
+  width: 35px;
+}
+.todayWeather__paragraphStrong {
+  margin-bottom: 5px;
+}
+.todayWeather__paragraphBlue {
+  margin-top: 5px;
+}
+
+.weatherForecast {
+  width: 100%;
+  margin: 30px 0px;
 }/*# sourceMappingURL=main.css.map */
