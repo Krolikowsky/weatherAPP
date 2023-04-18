@@ -56,3 +56,63 @@
         align-content: center
         align-items: center
         padding-top: 10px
+
+.weatherNow
+    width: 100%
+    padding: $paddingSection
+    background: $white
+    border-radius: $borderRadius
+    margin: $marginSection
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    &__temperatureParagraph
+        font-weight: 400
+        font-size: 2.8rem
+        line-height: 42px
+        letter-spacing: 1px
+        color: $blue
+        display: flex
+        align-content: center
+        align-items: center
+
+    &__feltTemperature
+        padding-left: 15px
+
+    &__iconBox
+        width: 25%
+
+    &__temperatureDescription
+        width: 65%
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+    &__icon
+        width: 100%
+
+.weatherNowBox
+    width: 100%
+    margin: $marginSection
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    &__box
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-content: center
+        align-items: center
+        text-align: center
+        background-color: $white
+        width: 30%
+        border-radius: $borderRadius
+        padding: $paddingSection
+
+    &__icon
+        width: 35px
+
+    &__boxWithInformation
+        margin-top: 10px
