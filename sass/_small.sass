@@ -150,3 +150,36 @@
 .weatherForecast
     width: 100%
     margin: $marginSection
+
+.dailyWeather
+    width: 100%
+    margin: $marginSection
+
+    &__row
+        background-color: $white
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        padding: $paddingSection
+        align-content: center
+        align-items: center
+        border-bottom: 1px solid $borderColor
+
+        &:first-child
+            border-top-left-radius: $borderRadius
+            border-top-right-radius: $borderRadius
+
+        &:last-child
+            border-bottom-left-radius: $borderRadius
+            border-bottom-right-radius: $borderRadius
+
+    &__iconCenter
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
+        align-content: center
+
+    &__icon
+        width: 35px
+        margin-right: 5px
